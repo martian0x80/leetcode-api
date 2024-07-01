@@ -15,16 +15,16 @@ func GetUserPublicProfile(username string) (*responses.UserPublicProfile, error)
 	if err != nil {
 		return nil, err
 	}
-	profile := new(responses.UserPublicProfile)
-	err = json.NewDecoder(resp.Body).Decode(profile)
-	if err != nil {
-		return nil, err
-	}
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
 		if err != nil {
 			fmt.Println(err)
 		}
 	}(resp.Body)
+	profile := new(responses.UserPublicProfile)
+	err = json.NewDecoder(resp.Body).Decode(profile)
+	if err != nil {
+		return nil, err
+	}
 	return profile, nil
 }

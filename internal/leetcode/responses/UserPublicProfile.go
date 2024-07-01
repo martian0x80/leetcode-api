@@ -5,23 +5,23 @@ import (
 )
 
 type UserPublicProfile struct {
-	Data Data `json:"data"`
+	Data UserPublicProfileData `json:"data"`
 }
 
-type Data struct {
-	MatchedUser MatchedUser `json:"matchedUser"`
+type UserPublicProfileData struct {
+	MatchedUser UserPublicProfileMatchedUser `json:"matchedUser"`
 }
 
-type MatchedUser struct {
-	ContestBadge interface{} `json:"contestBadge"` // Assuming null values can be any type, hence using interface{}
-	Username     string      `json:"username"`
-	GithubURL    string      `json:"githubUrl"`
-	TwitterURL   interface{} `json:"twitterUrl"`  // Assuming null values can be any type, hence using interface{}
-	LinkedinURL  interface{} `json:"linkedinUrl"` // Assuming null values can be any type, hence using interface{}
-	Profile      Profile     `json:"profile"`
+type UserPublicProfileMatchedUser struct {
+	ContestBadge interface{}              `json:"contestBadge"` // Assuming null values can be any type, hence using interface{}
+	Username     string                   `json:"username"`
+	GithubURL    string                   `json:"githubUrl"`
+	TwitterURL   interface{}              `json:"twitterUrl"`  // Assuming null values can be any type, hence using interface{}
+	LinkedinURL  interface{}              `json:"linkedinUrl"` // Assuming null values can be any type, hence using interface{}
+	Profile      UserPublicProfileProfile `json:"profile"`
 }
 
-type Profile struct {
+type UserPublicProfileProfile struct {
 	Ranking                  int         `json:"ranking"`
 	UserAvatar               string      `json:"userAvatar"`
 	RealName                 string      `json:"realName"`
