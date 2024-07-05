@@ -16,11 +16,11 @@ type UserProfileCalender struct {
 	} `json:"data"`
 }
 
-func (r *UserProfileCalender) ToByte() ([]byte, error) {
+func (r UserProfileCalender) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *UserProfileCalender) ToString() (string, error) {
+func (r UserProfileCalender) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

@@ -17,11 +17,11 @@ type RatingHistogramEntry struct {
 	TopPercentage float64 `json:"topPercentage"`
 }
 
-func (r *ContestRatingHistogram) ToByte() ([]byte, error) {
+func (r ContestRatingHistogram) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *ContestRatingHistogram) ToString() (string, error) {
+func (r ContestRatingHistogram) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

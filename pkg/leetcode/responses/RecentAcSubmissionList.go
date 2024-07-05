@@ -17,11 +17,11 @@ type RecentAcSubmissionListItem struct {
 	Timestamp string `json:"timestamp"`
 }
 
-func (r *RecentAcSubmissionList) ToByte() ([]byte, error) {
+func (r RecentAcSubmissionList) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *RecentAcSubmissionList) ToString() (string, error) {
+func (r RecentAcSubmissionList) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

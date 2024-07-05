@@ -35,11 +35,11 @@ type QuestionOfToday struct {
 	} `json:"data"`
 }
 
-func (r *QuestionOfToday) ToByte() ([]byte, error) {
+func (r QuestionOfToday) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *QuestionOfToday) ToString() (string, error) {
+func (r QuestionOfToday) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

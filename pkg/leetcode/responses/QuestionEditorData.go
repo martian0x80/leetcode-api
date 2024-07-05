@@ -26,11 +26,11 @@ type QuestionEditorDataCodeSnippet struct {
 	Code     string `json:"code"`
 }
 
-func (r *QuestionEditorData) ToByte() ([]byte, error) {
+func (r QuestionEditorData) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *QuestionEditorData) ToString() (string, error) {
+func (r QuestionEditorData) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

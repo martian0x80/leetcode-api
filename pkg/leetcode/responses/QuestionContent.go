@@ -16,11 +16,11 @@ type QuestionContent struct {
 	Data QuestionContentData `json:"data"`
 }
 
-func (r *QuestionContent) ToByte() ([]byte, error) {
+func (r QuestionContent) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *QuestionContent) ToString() (string, error) {
+func (r QuestionContent) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

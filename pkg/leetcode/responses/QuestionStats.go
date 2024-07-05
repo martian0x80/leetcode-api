@@ -16,11 +16,11 @@ type QuestionStatsQuestion struct {
 	Stats string `json:"stats"`
 }
 
-func (r *QuestionStats) ToByte() ([]byte, error) {
+func (r QuestionStats) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *QuestionStats) ToString() (string, error) {
+func (r QuestionStats) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

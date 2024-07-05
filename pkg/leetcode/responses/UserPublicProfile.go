@@ -42,11 +42,11 @@ type UserPublicProfileProfile struct {
 	CategoryDiscussCountDiff int         `json:"categoryDiscussCountDiff"`
 }
 
-func (r *UserPublicProfile) ToByte() ([]byte, error) {
+func (r UserPublicProfile) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *UserPublicProfile) ToString() (string, error) {
+func (r UserPublicProfile) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

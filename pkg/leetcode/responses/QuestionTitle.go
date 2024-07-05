@@ -22,11 +22,11 @@ type QuestionTitleDetails struct {
 	CategoryTitle      string `json:"categoryTitle"`
 }
 
-func (r *QuestionTitle) ToByte() ([]byte, error) {
+func (r QuestionTitle) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *QuestionTitle) ToString() (string, error) {
+func (r QuestionTitle) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

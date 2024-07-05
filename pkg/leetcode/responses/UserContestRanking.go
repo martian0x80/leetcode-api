@@ -19,11 +19,11 @@ type UserContestRankingDetails struct {
 	Badge                 *string `json:"badge"`
 }
 
-func (r *UserContestRanking) ToByte() ([]byte, error) {
+func (r UserContestRanking) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *UserContestRanking) ToString() (string, error) {
+func (r UserContestRanking) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

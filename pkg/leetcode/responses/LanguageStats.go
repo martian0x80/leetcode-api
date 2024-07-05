@@ -19,11 +19,11 @@ type LanguageProblemCount struct {
 	ProblemsSolved int    `json:"problemsSolved"`
 }
 
-func (r *LanguageStats) ToByte() ([]byte, error) {
+func (r LanguageStats) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *LanguageStats) ToString() (string, error) {
+func (r LanguageStats) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

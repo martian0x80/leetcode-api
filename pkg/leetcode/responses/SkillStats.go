@@ -26,11 +26,11 @@ type TagProblemCount struct {
 	ProblemsSolved int    `json:"problemsSolved"`
 }
 
-func (r *SkillStats) ToByte() ([]byte, error) {
+func (r SkillStats) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *SkillStats) ToString() (string, error) {
+func (r SkillStats) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

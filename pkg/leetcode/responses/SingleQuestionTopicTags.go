@@ -19,11 +19,11 @@ type SingleQuestionTopicTagsTopicTag struct {
 	Slug string `json:"slug"`
 }
 
-func (r *SingleQuestionTopicTags) ToByte() ([]byte, error) {
+func (r SingleQuestionTopicTags) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *SingleQuestionTopicTags) ToString() (string, error) {
+func (r SingleQuestionTopicTags) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

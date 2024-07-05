@@ -14,11 +14,11 @@ type QuestionHintsQuestion struct {
 	Hints []string `json:"hints"`
 }
 
-func (r *QuestionHints) ToByte() ([]byte, error) {
+func (r QuestionHints) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *QuestionHints) ToString() (string, error) {
+func (r QuestionHints) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

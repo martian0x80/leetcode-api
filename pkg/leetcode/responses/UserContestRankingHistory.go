@@ -27,11 +27,11 @@ type Contest struct {
 	StartTime int    `json:"startTime"`
 }
 
-func (r *UserContestRankingHistory) ToByte() ([]byte, error) {
+func (r UserContestRankingHistory) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *UserContestRankingHistory) ToString() (string, error) {
+func (r UserContestRankingHistory) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }

@@ -35,11 +35,11 @@ type UserProblemsSolvedAcSubmission struct {
 	Count      int    `json:"count"`
 }
 
-func (r *UserProblemsSolved) ToByte() ([]byte, error) {
+func (r UserProblemsSolved) ToByte() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-func (r *UserProblemsSolved) ToString() (string, error) {
+func (r UserProblemsSolved) ToString() (string, error) {
 	b, e := r.ToByte()
 	return string(b), e
 }
