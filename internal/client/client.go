@@ -1,4 +1,4 @@
-package leetcode
+package client
 
 import (
 	"io"

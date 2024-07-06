@@ -4,8 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	Query "lc-api/pkg/leetcode/queries"
-	"lc-api/pkg/leetcode/responses"
+	"github.com/martian0x80/leetcode-api/internal/client"
+	Query "github.com/martian0x80/leetcode-api/pkg/leetcode/queries"
+	"github.com/martian0x80/leetcode-api/pkg/leetcode/responses"
 )
 
 //func GetUserPublicProfile(username string) (*responses.UserPublicProfile, error) {
@@ -31,7 +32,7 @@ import (
 
 func Get[T responses.IResponse](query Query.IQuery) (*T, error) {
 	q := query.GetQuery()
-	resp, err := Request(q)
+	resp, err := client.Request(q)
 	if err != nil {
 		return nil, err
 	}

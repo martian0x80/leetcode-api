@@ -2,13 +2,17 @@ package main
 
 import (
 	"fmt"
-	"lc-api/internal/leetcode"
-	"lc-api/pkg/leetcode/queries"
-	"lc-api/pkg/leetcode/responses"
+	"github.com/martian0x80/leetcode-api/pkg/leetcode"
+	"github.com/martian0x80/leetcode-api/pkg/leetcode/queries"
+	"github.com/martian0x80/leetcode-api/pkg/leetcode/responses"
 )
 
 func main() {
-	//profile, e := leetcode.GetUserPublicProfile("randomdude")
+	
+	// Example of using the leetcode API
+
+	// Get user profile
+
 	profile, e := leetcode.Get[responses.UserPublicProfile](&queries.UserPublicProfile{Username: "randomdude"})
 	if e != nil {
 		panic(e)
